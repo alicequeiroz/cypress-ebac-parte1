@@ -1,14 +1,18 @@
+const perfil = require('../fixtures/login.json')
+
 describe ('Funcionalidade de login', ()=> {
 
     beforeEach(()=> {
-        cy.visit('http://lojaebac.ebaconline.art.br/minha-conta/')
+        cy.visit('minha-conta/')
     })
 
-    it ('Deve realizar login com sucesso', () => {
-        cy.get('#username').type('aluno_ebac@teste.com')
-        cy.get('#password').type('teste@teste.com')
-        cy.get('.woocommerce-form > .button').click()
-        cy.get('.page-title').should('contain', 'Minha conta')
+    it.only('Deve realizar login com sucesso', () => {
+        cy.fixture('login').then(dados => {
+            cy.get('#username').type(dados.usuario)
+            cy.get('#password').type(dados.senha, {log: false})
+            cy.get('.woocommerce-form > .button').click()
+            cy.get('.page-title').should('contain', 'Minha conta')
+        })
     })
 
     it ('Deve exibir mensagem de erro ao submeter usuário inválido', ()=> {
