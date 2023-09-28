@@ -16,7 +16,7 @@ class EnderecoPage {
         .contains('Salvar endereços').click()
     }
 
-    editaEnderecoEntrega(nome, sobrenome, empresa, pais, endereco, numero, cidade,estado, cep){
+    editaEnderecoEntrega(nome, sobrenome, empresa, pais, endereco, numero, cidade, estado, cep){
         cy.get(':nth-child(2) > .title > .edit').click()
         cy.get('#shipping_first_name').clear().type(nome)
         cy.get('#shipping_last_name').clear().type(sobrenome)
