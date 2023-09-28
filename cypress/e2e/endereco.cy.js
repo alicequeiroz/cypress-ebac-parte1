@@ -8,6 +8,7 @@ describe('Endereços de faturamento e entrega', () => {
         cy.fixture('login').then(dados =>{
             cy.login(dados.usuario, dados.senha)
         })
+        cy.get('.woocommerce-MyAccount-navigation-link--edit-address > a').click()
 
     });
 
@@ -26,6 +27,23 @@ describe('Endereços de faturamento e entrega', () => {
             dadosEndereco[0].email
             )
             cy.get('.woocommerce-message').should('contain', 'Endereço alterado com sucesso.')
+    });
+
+    it.only('Deve cadastrar endereço de entrega com sucesso', () => {
+        EnderecoPage.editaEnderecoEntrega(
+            dadosEndereco[2].nome,
+            dadosEndereco[2].sobrenome,
+            dadosEndereco[2].empresa,
+            dadosEndereco[2].pais,
+            dadosEndereco[2].endereco,
+            dadosEndereco[2].numero,
+            dadosEndereco[2].cidade,
+            dadosEndereco[2].estado,
+            dadosEndereco[2].cep
+        )
+
+        cy.get('.woocommerce-message').should('contain', 'Endereço alterado com sucesso.')
+        
     });
 });
 

@@ -25,6 +25,18 @@
         "cep": "60544-365",
         "telefone": "(85) 99714-2531",
         "email": "heitor_galvao@lht.com.br"
+    },
+
+    {
+        "nome": "Manoel",
+        "sobrenome": "Nascimento",
+        "empresa": "JMK Marketing Ltda",
+        "pais": "Brasil",
+        "endereco": "Rua Reginaldo Cavalcante Pereira",
+        "numero": "882",
+        "cidade": "Campina Grande",
+        "estado": "Paraiba", 
+        "cep": "58428-205"
     }
 
 ]
