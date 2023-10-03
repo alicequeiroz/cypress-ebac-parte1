@@ -1,3 +1,4 @@
+const detalhesProduto = require ("../fixtures/produtos.json")
 
 describe('Página de produtos', () => {
     
@@ -10,11 +11,13 @@ describe('Página de produtos', () => {
     });
 
     it.only('Deve adicionar um produto ao carrinho', () => {
-
-        var quantidade = 7 
-
-        cy.adicionaProdutos('Abominable Hoodie', 'M', "Blue", quantidade)
-        cy.get('.dropdown-toggle > .mini-cart-items').should('contain', quantidade)
+        cy.adicionaProdutos(
+            detalhesProduto[0].produto,
+            detalhesProduto[0].tamanho,
+            detalhesProduto[0].cor,
+            detalhesProduto[0].quantidade
+        )
+        cy.get('.dropdown-toggle > .mini-cart-items').should('contain', detalhesProduto[0].quantidade)
     });
 
 });

@@ -1,0 +1,16 @@
+[
+    {
+        "produto": "Abominable Hoodie",
+        "tamanho": "XS",
+        "cor": "Green",
+        "quantidade": "4"
+    },
+
+    {
+        "produto": "Atlas Fitness Tank",
+        "tamanho": "XL",
+        "cor": "Blue",
+        "quantidade": "5"
+    }
+
+]
